@@ -1,0 +1,68 @@
+// 1 //
+
+PROCEDURE dot_product(V1,V2 : ARRAY_OF INTEGER ; ps : INTEGER)
+VAR
+    i : INTEGER
+BEGIN
+    ps :=0;
+    i:=0;
+    IF (V1.length <> V2.length) THEN
+        ps := NaN; 
+        Write("vectors with different sizes we cannot calculat dot product");
+
+    END_IF
+
+    FOR i FROM 0 TO V1.length-1 STEP 1  DO
+        ps := ps + V1[i]*V2[i];
+    END_FOR
+END
+
+
+// 2 //
+
+ALGORITHM ortho_vectors
+VAR
+    V1,V2 : ARRAY_OF INTEGER [50];
+    ps : INTEGER;
+BEGIN
+    
+    dot_product(V1,v2,ps);
+    IF (ps = 0) THEN
+        Write("V1 and V2 are orthogonal");
+    ELSE
+        Write("V1 and V2 are not orthogonal");
+    END_IF
+END
+
+
+// 3//
+
+FUNCTION dot_product(V1,V2 : ARRAY_OF INTEGER) : INTEGER
+VAR
+    i, ps : INTEGER;
+BEGIN
+    ps :=0;
+    i:=0;
+    IF (V1.length <> V2.length) THEN
+        Write("vectors with different sizes we cannot calculate dot product");
+        RETURN NaN; 
+    END_IF
+    FOR i FROM 0 TO V1.length-1 STEP 1  DO
+        ps := ps + V1[i]*V2[i];
+    END_FOR
+    RETURN ps ;
+END
+
+ALGORITHM orth_vectors
+VAR
+    V1,V2 : ARRAY_OF INTEGER [50];
+    ps : INTEGER;
+BEGIN
+    
+    ps := dot_product(v1,v2);
+    IF (ps == 0) THEN
+        Write("V1 and V2 are orthogonal");
+    ELSE
+        Write("V1 and V2 are not orthogonal");
+    END_IF
+END

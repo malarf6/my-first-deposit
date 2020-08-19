@@ -1,0 +1,18 @@
+  
+ALGORITHM InsertionSort
+VAR
+     arr : ARRAY_OF INTEGER[50];
+     i,j,k : INTEGER;
+BEGIN
+    FOR i FROM 1 TO arr.length-1 STEP 1  DO
+        k:=arr[i];  
+        j = i - 1;  
+        WHILE (j>=0 and arr[j] > key) DO
+             arr[j + 1] = arr[j];  
+             j = j - 1;  
+        END_WHILE
+         arr[j + 1] = key;  
+    END_FOR
+
+END
+

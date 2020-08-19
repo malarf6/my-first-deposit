@@ -1,0 +1,33 @@
+FUNCTION isPalindrome(s:STRING , i:INTEGER , j:INTEGER) : BOOLEAN
+VAR
+    
+BEGIN
+   IF (s.lengh == 0 or s.length==1) THEN
+       return true;
+   END_IF
+   
+  IF (s[i]==s[j]) THEN
+     return isPalindrome(i+1,j-1);
+     ELSE
+     return false;
+  END_IF
+ 
+     
+END
+
+ALGORITHM check
+VAR
+    s:STRING;
+    i,j:INTEGER;
+    b:BOOLEAN
+BEGIN
+    read(s);
+    i=s[0];
+    j=s[s.length-1]
+    b:=isPalindrome(s,i,j)
+    IF (b) THEN
+        write("word is palindrome")
+        ELSE
+        write("word not palindome")
+    END_IF
+END
